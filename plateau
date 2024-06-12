@@ -1,33 +1,3 @@
-:?loc = plateau
-
- ?item.potion = lucky & foe.distance <=10
- ^&Foe = phase1
-  EquipL poison sword
-  EquipR vigor sword
- ?Foe.armor > 0
-  Equip marteau lourd +2
- ?Foe = phase3
-  equipL vigor sword
-  EquipR poison sword
- ?foe = phase2
-  ?foe = aether
-   equipL vigor sword
-   EquipR poison sword
-  :?foe = fire
-   equip u aether 
-  :?foe = ice
-   equipL d fire sword
-  :?foe = poison
-   equipL ice sword
-  :?foe = vigor
-   equipL poison sword
-   EquipR vigor sword
- ?foe = phase3
-  var x
-  var y
-  x = screen.FromWorldX(pos.x)
-  y = screen.FromWorldZ(pos.z - pos.y)
-
-  ?foe = phase3 & foe.state = 115
-  ^&draw.GetSymbol(x+1,y-8)=＂!＂
-    equipL esprit
+var cd
+cd = item.GetCooldown("bardiche")
+>`0,0,Bardiche cooldown = @cd@
