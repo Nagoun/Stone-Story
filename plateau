@@ -2,26 +2,26 @@
 
  ?item.potion = lucky & foe.distance <=10
  ^&Foe = phase1
-  EquipL poison
-  EquipR vigor
+  EquipL poison sword
+  EquipR vigor sword
  ?Foe.armor > 0
-  Equip ham 14
+  Equip marteau lourd +2
  ?Foe = phase3
-  equip vigor
-  Equip poison
+  equipL vigor sword
+  EquipR poison sword
  ?foe = phase2
   ?foe = aether
-   equip vigor
-   Equip poison
+   equipL vigor sword
+   EquipR poison sword
   :?foe = fire
    equip u aether 
   :?foe = ice
-   equip d fire
+   equipL d fire sword
   :?foe = poison
-   equip ice
+   equipL ice sword
   :?foe = vigor
-   equip poison
-   Equip vigor
+   equipL poison sword
+   EquipR vigor sword
  ?foe = phase3
   var x
   var y
@@ -30,4 +30,4 @@
 
   ?foe = phase3 & foe.state = 115
   ^&draw.GetSymbol(x+1,y-8)=＂!＂
-    equipL mind
+    equipL esprit
