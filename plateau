@@ -1,0 +1,33 @@
+:?loc = plateau
+
+ ?item.potion = lucky & foe.distance <=10
+ ^&Foe = phase1
+  EquipL poison
+  EquipR vigor
+ ?Foe.armor > 0
+  Equip ham 14
+ ?Foe = phase3
+  equip vigor
+  Equip poison
+ ?foe = phase2
+  ?foe = aether
+   equip vigor
+   Equip poison
+  :?foe = fire
+   equip u aether 
+  :?foe = ice
+   equip d fire
+  :?foe = poison
+   equip ice
+  :?foe = vigor
+   equip poison
+   Equip vigor
+ ?foe = phase3
+  var x
+  var y
+  x = screen.FromWorldX(pos.x)
+  y = screen.FromWorldZ(pos.z - pos.y)
+
+  ?foe = phase3 & foe.state = 115
+  ^&draw.GetSymbol(x+1,y-8)=＂!＂
+    equipL mind
