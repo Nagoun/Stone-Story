@@ -2,7 +2,7 @@
  equipl star
  equipr triskelion
 
-?foe.distance <= 20 & foe ! boss
+?foe.distance <= 20 | foe.state =1
  equip bras
   ?item.CanActivate(Bras)
    Activate R
