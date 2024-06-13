@@ -1,3 +1,10 @@
+?pickup.distance <= 17
+ equipl star
+ equipr triskelion
+
+?foe.distance <= 20 & foe ! boss
+ equip bras
+
 ?foe = boss & foe.distance <= 10 &
 ^item.GetCooldown("bardiche") <= 0 |
 ^item.GetCooldown("bardiche") > 870
