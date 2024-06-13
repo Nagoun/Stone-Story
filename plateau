@@ -1,3 +1,5 @@
-var fs
-fs = foe.state
->`0,0,@cd@
+?foe = boss & foe.distance <= 10 &
+^item.GetCooldown("bardiche") <= 0 |
+^item.GetCooldown("bardiche") > 870
+  equip bardiche
+  activate R
