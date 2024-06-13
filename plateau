@@ -4,6 +4,8 @@
 
 ?foe.distance <= 20 & foe ! boss
  equip bras
+  ?item.CanActivate(Bras)
+   Activate R
 
 ?foe = boss & foe.distance <= 10 &
 ^item.GetCooldown("bardiche") <= 0 |
